@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Better Me with Nova</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0faff, #ffffe0);
+      color: #333;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #0077b6;
+    }
+    .section {
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #ffffffcc;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .icons {
+      font-size: 26px;
+      display: flex;
+      gap: 15px;
+      margin: 10px 0;
+      justify-content: center;
+    }
+    .input-field, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      text-align: center;
+    }
+    .day {
+      padding: 10px;
+      border-radius: 5px;
+      background: #e0f7fa;
+      cursor: pointer;
+    }
+    .day.active {
+      background: #00b4d8;
+      color: white;
+    }
+    .water-intake {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .water-square {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #0077b6;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+    }
+    .water-square.filled {
+      background-color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Better Me with Nova</h1>
+
+  <div class="section">
+    <h2>Today's Tracker</h2>
+
+    <div>
+      <strong>Did you exercise today?</strong>
+      <div class="icons">
+        <span title="Cycling">🚴‍♀️</span>
+        <span title="Gym">🏋️‍♀️</span>
+        <span title="Running">🏃‍♀️</span>
+        <span title="Yoga">🧘‍♀️</span>
+        <span title="Walk">🚶‍♀️</span>
+      </div>
+    </div>
+
+    <div>
+      <strong>How many steps did you walk?</strong>
+      <input class="input-field" type="number" placeholder="Enter step count" />
+    </div>
+
+    <div>
+      <strong>What did you eat today?</strong>
+      <textarea class="input-field" rows="4" placeholder="List your meals and snacks..."></textarea>
+    </div>
+
+    <div>
+      <strong>Estimated Calories Consumed:</strong>
+      <input class="input-field" type="number" placeholder="e.g. 1800" />
+    </div>
+
+    <div>
+      <strong>Estimated Calories Burned:</strong>
+      <input class="input-field" type="number" placeholder="e.g. 500" />
+    </div>
+
+    <div>
+      <strong>Water Intake:</strong>
+      <div class="water-intake">
+        <div class="water-square" onclick="toggleFill(this)"></div>
+        <div class="water-square" onclick="toggleFill(this)"></div>
+        <div class="water-square" onclick="toggleFill(this)"></div>
+        <div class="water-square" onclick="toggleFill(this)"></div>
+        <div class="water-square" onclick="toggleFill(this)"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>April 2025</h2>
+    <div class="calendar">
+      <div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div>
+      <div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div>
+      <div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day active">20</div><div class="day">21</div>
+      <div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div>
+      <div class="day">29</div><div class="day">30</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFill(element) {
+      element.classList.toggle('filled');
+    }
+  </script>
+</body>
+</html>
